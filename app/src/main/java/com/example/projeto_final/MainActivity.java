@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void inserirDados (View view){
 
-        Intent intentInserirDados = new Intent(this, DisplayMostrar.class);
+        Intent intentInserirDados = new Intent(this, DisplayMostrarDoentes.class);
         startActivity(intentInserirDados);
     }
     public void verEstatisticas (View view){
@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intentEstatistica = new Intent(this,DisplayVerEstatisticas.class);
         startActivity(intentEstatistica);
     }
+    public void inserirTestes (View view){
 
+        Intent intentInserirTestes = new Intent(this, DisplayMostrarDoentes.class);
+        startActivity(intentInserirTestes);
+    }
 
 }

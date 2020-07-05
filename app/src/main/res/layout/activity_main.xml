@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="inserirDados"
-        android:text="@string/Button_inserir"
+        android:text="Pacientes"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonVerEstatisticas"
         app:layout_constraintStart_toStartOf="@+id/imageViewDistrito" />
 
@@ -44,11 +44,10 @@
         android:id="@+id/buttonVerEstatisticas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:onClick="verEstatisticas"
         android:text="@string/Button_estatisticas"
-        app:layout_constraintEnd_toEndOf="@+id/imageViewDistrito"
-        app:layout_constraintTop_toBottomOf="@+id/imageViewDistrito" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonTestes"
+        app:layout_constraintEnd_toEndOf="@+id/imageViewDistrito" />
 
     <ImageView
         android:id="@+id/imageViewDistrito"
@@ -62,5 +61,15 @@
         app:layout_constraintTop_toBottomOf="@+id/imageViewCovid"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/distrito_guarda" />
+
+    <Button
+        android:id="@+id/buttonTestes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="inserirTestes"
+        android:text="Testes"
+        app:layout_constraintEnd_toStartOf="@+id/buttonVerEstatisticas"
+        app:layout_constraintStart_toEndOf="@+id/buttonRegistarTeste"
+        tools:layout_editor_absoluteY="548dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

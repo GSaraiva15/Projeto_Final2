@@ -16,25 +16,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CursorAdapter;
 
-public class DisplayMostrar extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
     public static final String ID_DOENTE = "ID_DOENTE";
     public static final int ID_CURSOR_LOADER_DOENTE = 0;
     private AdaptadorDoentes adaptadorDoentes;
     private RecyclerView recyclerViewDoentes;
-    public static final String ID_TESTES = "ID_TESTES";
-    public static final int ID_CURSOR_LOADER_TESTES = 0;
-    private AdaptadorTestes adaptadorTestes;
-    private RecyclerView recyclerViewTestes;
+
 
     private Doentes doentes = null;
-    private Testes testes = null;
+
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_mostrar);
+        setContentView(R.layout.activity_display_mostrar_doentes);
 
         recyclerViewDoentes = (RecyclerView) findViewById(R.id.RecylerViewDoentes);
         adaptadorDoentes = new AdaptadorDoentes(this);
@@ -45,14 +42,14 @@ public class DisplayMostrar extends AppCompatActivity implements LoaderManager.L
 
         LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_DOENTE, null, this);
 
-        recyclerViewTestes = (RecyclerView) findViewById(R.id.RecyclerViewTestes);
+        /*recyclerViewTestes = (RecyclerView) findViewById(R.id.RecyclerViewTestes);
         adaptadorTestes = new AdaptadorTestes(this);
         recyclerViewTestes.setAdapter(adaptadorTestes);
         recyclerViewTestes.setLayoutManager(new LinearLayoutManager(this));
 
         adaptadorTestes.setCursor(null);
 
-        LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_TESTES, null, this);
+        LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_TESTES, null, this);*/
 
     } public void inserirDoente (View view){
 
@@ -68,7 +65,6 @@ public class DisplayMostrar extends AppCompatActivity implements LoaderManager.L
     @Override
     protected void onResume(){
         getSupportLoaderManager().restartLoader(ID_CURSOR_LOADER_DOENTE,null,this);
-        getSupportLoaderManager().restartLoader(ID_CURSOR_LOADER_TESTES,null,this);
         super.onResume();
     }
     /**
@@ -84,7 +80,7 @@ public class DisplayMostrar extends AppCompatActivity implements LoaderManager.L
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
         return  new CursorLoader(this, ContentProvider.ENDERECO_DOENTES, BdTabelaDoentes.TODOS_CAMPOS_DOENTE, null, null, BdTabelaDoentes.NOME_DOENTE);
-      return new CursorLoader(this,ContentProvider.ENDERECO_TESTES,BdTabelaTestes.TODOS_CAMPOS_TESTES,null,null, BdTabelaTestes.NOME_DOENTE_TESTE);
+     // return new CursorLoader(this,ContentProvider.ENDERECO_TESTES,BdTabelaTestes.TODOS_CAMPOS_TESTES,null,null, BdTabelaTestes.NOME_DOENTE_TESTE);
     }
 
     /**
@@ -131,7 +127,7 @@ public class DisplayMostrar extends AppCompatActivity implements LoaderManager.L
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
         adaptadorDoentes.setCursor(data);
-        adaptadorTestes.setCursor(data);
+       // adaptadorTestes.setCursor(data);
     }
 
     /**
@@ -146,7 +142,7 @@ public class DisplayMostrar extends AppCompatActivity implements LoaderManager.L
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
         adaptadorDoentes.setCursor(null);
-        adaptadorTestes.setCursor(null);
+       // adaptadorTestes.setCursor(null);
     }
 
 }

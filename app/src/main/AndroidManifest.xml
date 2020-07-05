@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".DisplayInserirTestes"></activity>
-        <activity android:name=".DisplayMostrar" />
+        <activity android:name=".DisplayMostrarDoentes" />
         <activity android:name=".DisplayVerEstatisticas" />
         <activity android:name=".DisplayInserirDoentes" />
         <activity android:name=".MainActivity">

@@ -131,7 +131,7 @@ public class AdaptadorTestes extends RecyclerView.Adapter<AdaptadorTestes.ViewHo
             }
             viewHolderTestesSelecionado = this;
             seleciona();
-            DisplayMostrar displayMostrar = (DisplayMostrar) AdaptadorTestes.this.context;
+            DisplayMostrarDoentes displayMostrarDoentes = (DisplayMostrarDoentes) AdaptadorTestes.this.context;
 
         }
         private void desSeleciona() {
