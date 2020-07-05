@@ -30,18 +30,21 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecylerViewDoentes"
-        android:layout_width="401dp"
-        android:layout_height="287dp"
-        android:layout_marginTop="64dp"
+        android:layout_width="383dp"
+        android:layout_height="252dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerViewTestes"
-        android:layout_width="408dp"
-        android:layout_height="190dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="389dp"
+        android:layout_height="183dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="84dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonApagarDoente" />
 
@@ -73,12 +76,13 @@
         android:id="@+id/buttonApagarTeste"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
         android:layout_marginRight="24dp"
         android:text="@string/buttun_apagar_teste"
+        app:layout_constraintBottom_toTopOf="@+id/RecyclerViewTestes"
         app:layout_constraintEnd_toStartOf="@+id/ButtonTeste"
-        app:layout_constraintTop_toBottomOf="@+id/RecyclerViewTestes" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonApagarDoente"
+        app:layout_constraintVertical_bias="0.327" />
 
     <Button
         android:id="@+id/buttonAlterarTeste"
