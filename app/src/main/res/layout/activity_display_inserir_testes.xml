@@ -35,14 +35,23 @@
                 android:orientation="vertical"
                 android:textColorHint="#000000">
 
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/textInputEditTextNome"
+                <TextView
+                    android:id="@+id/textViewNomeDoente"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/nome"
-                    android:inputType="textPersonName|textCapWords"
+                    android:layout_marginLeft="4dp"
+                    android:layout_marginTop="5dp"
+                    android:text="@string/nome"
                     android:textColor="#000000"
-                    android:textColorHint="#000000" />
+                    android:textColorHint="#000000"
+                    android:textSize="18dp" />
+                <Spinner
+                    android:id="@+id/spinnerNomeDoente"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-3dp"
+                    android:layout_marginLeft="3dp"
+                    android:spinnerMode="dialog" />
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
