@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name" translatable="false">Projeto_Final</string>
+    <string name="titulo">"Guarda covid-19 stats "</string>
+    <string name="Button_estatisticas">Stats</string>
+    <string name="Button_inserir">Insert data</string>
+    <string name="registation">Patient record</string>
+    <string name="nome">Name</string>
+    <string name="dataNascimento">Date of Birth</string>
+    <string name="estado">Patient status</string>
+    <string name="concelho">County</string>
+    <string name="telemovel">Phone number</string>
+    <string name="doenteCronico">Chronic sick?</string>
+    <string name="sexo">Gender</string>
+    <string name="dataEstadoAtual">Current State Date</string>
+    <string name="Button_inserirDoente">Insert</string>
+    <string name="ButtonMapa">Map</string>
+    <string name="masculino">Male</string>
+    <string name="feminino">Female</string>
+    <string name="aguiarDaBeira" translatable="false">Aguiar da Beira</string>
+    <string name="almeida" translatable="false">Almeida</string>
+    <string name="celoricoDaBeira" translatable="false">Celorico da Beira</string>
+    <string name="figueiraDeCasteloRodrigo" translatable="false">Figueira de Castelo Rodrigo</string>
+    <string name="gouveia" translatable="false">Gouveia</string>
+    <string name="guarda" translatable="false">Guarda</string>
+    <string name="manteigas" translatable="false">Manteigas</string>
+    <string name="meda" translatable="false">Mêda</string>
+    <string name="pinhel" translatable="false">Pinhel</string>
+    <string name="sabugal" translatable="false">Sabugal</string>
+    <string name="seia" translatable="false">Seia</string>
+    <string name="trancoso" translatable="false">Trancoso</string>
+    <string name="vilaNovaDeFozCoa" translatable="false">Vila Nova de Foz Côa</string>
+    <string name="sim">Yes</string>
+    <string name="nao">No</string>
+    <string name="recuperado">Recovered</string>
+    <string name="infetado">Infected</string>
+    <string name="falecido">Deceased</string>
+    <string name="NomeObrigatorio">Name is required</string>
+    <string name="CaracteresTelemovelObrigatorio">Phone must be 9 characters</string>
+    <string name="paciente">Patient</string>
+    <string name="teste">Test</string>
+    <string name="DataTeste">Date of Test</string>
+    <string name="resultadoTeste">Result of Test</string>
+    <string name="resultadoPositivo">Positive Result</string>
+    <string name="ResultadoNegativo">Negative Result</string>
+    <string name="formatoData">Please Write DD/MM/YYYY</string>
+    <string name="fornosdealgodres" translatable="false">Fornos de Algodres</string>
+    <string name="button_inserir_paciente">Insert Patient</string>
+    <string name="button_inserir_teste">Insert Test</string>
+    <string name="buttun_alterar_doente">Update Patient</string>
+    <string name="buttun_delete_Patient">Delete Patient</string>
+    <string name="button_alterar_Teste">Update Test</string>
+    <string name="buttun_apagar_teste">Delete Test</string>
+</resources>

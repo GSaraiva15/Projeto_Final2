@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Projeto_Final</string>
+    <string name="titulo">Estatísticas covid-19 na Guarda</string>
+    <string name="Button_inserir">Inserir dados</string>
+    <string name="Button_estatisticas">Estatísticas</string>
+    <string name="registation">Registo do Paciente</string>
+    <string name="nome">Nome</string>
+    <string name="dataNascimento">Data de nascimento</string>
+    <string name="estado">Estado do doente</string>
+    <string name="concelho">Concelho</string>
+    <string name="telemovel">Telemovel</string>
+    <string name="doenteCronico">Doente cronico?</string>
+    <string name="sexo">Gênero</string>
+    <string name="dataEstadoAtual">Data do Estado Atual</string>
+    <string name="Button_inserirDoente">Inserir</string>
+    <string name="ButtonMapa">Mapa</string>
+    <string name="masculino">Masculino</string>
+    <string name="feminino">Feminino</string>
+    <string name="sim">Sim</string>
+    <string name="nao">Não</string>
+    <string name="infetado">Infetado</string>
+    <string name="recuperado">Recuperado</string>
+    <string name="falecido">Falecido</string>
+    <string name="NomeObrigatorio">Name is required</string>
+    <string name="CaracteresTelemovelObrigatorio">Phone must be 9 characters</string>
+    <string name="paciente">Paciente</string>
+    <string name="teste">Testes</string>
+    <string name="DataTeste">Data do Teste</string>
+    <string name="resultadoTeste">Resultado Do Test</string>
+    <string name="resultadoPositivo">Resultado Positivo</string>
+    <string name="ResultadoNegativo">Resultado Negativo</string>
+    <string name="formatoData">Por Favor escreva DD/MM/YYYY</string>
+    <string name="button_inserir_paciente">Inserir Paciente</string>
+    <string name="button_inserir_teste">Inserir Teste</string>
+    <string name="buttun_delete_Patient">Apagar Paciente</string>
+    <string name="buttun_alterar_doente">Alterar Paciente</string>
+    <string name="buttun_apagar_teste">Apagar Teste</string>
+    <string name="button_alterar_Teste">Alterar Teste</string>
+</resources>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DisplayMostrar">
+
+    <Button
+        android:id="@+id/ButtonTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="inserirTestes"
+        android:text="@string/button_inserir_teste"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonApagarTeste"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonDoente"
+        android:layout_width="114dp"
+        android:layout_height="53dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="inserirDoente"
+        android:text="@string/button_inserir_paciente"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonApagarDoente"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecylerViewDoentes"
+        android:layout_width="401dp"
+        android:layout_height="287dp"
+        android:layout_marginTop="64dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewTestes"
+        android:layout_width="408dp"
+        android:layout_height="190dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonApagarDoente" />
+
+    <Button
+        android:id="@+id/buttonApagarDoente"
+        android:layout_width="106dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/buttun_delete_Patient"
+        app:layout_constraintEnd_toStartOf="@+id/buttonDoente"
+        app:layout_constraintTop_toBottomOf="@+id/RecylerViewDoentes" />
+
+    <Button
+        android:id="@+id/buttonUpdateDoente"
+        android:layout_width="117dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginRight="20dp"
+        android:text="@string/buttun_alterar_doente"
+        app:layout_constraintEnd_toStartOf="@+id/buttonApagarDoente"
+        app:layout_constraintHorizontal_bias="0.888"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RecylerViewDoentes" />
+
+    <Button
+        android:id="@+id/buttonApagarTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/buttun_apagar_teste"
+        app:layout_constraintEnd_toStartOf="@+id/ButtonTeste"
+        app:layout_constraintTop_toBottomOf="@+id/RecyclerViewTestes" />
+
+    <Button
+        android:id="@+id/buttonAlterarTeste"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginRight="24dp"
+        android:text="@string/button_alterar_Teste"
+        app:layout_constraintBaseline_toBaselineOf="@+id/buttonApagarTeste"
+        app:layout_constraintEnd_toStartOf="@+id/buttonApagarTeste" />
+</androidx.constraintlayout.widget.ConstraintLayout>
