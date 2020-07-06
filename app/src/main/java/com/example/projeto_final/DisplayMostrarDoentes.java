@@ -42,14 +42,7 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
 
         LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_DOENTE, null, this);
 
-        /*recyclerViewTestes = (RecyclerView) findViewById(R.id.RecyclerViewTestes);
-        adaptadorTestes = new AdaptadorTestes(this);
-        recyclerViewTestes.setAdapter(adaptadorTestes);
-        recyclerViewTestes.setLayoutManager(new LinearLayoutManager(this));
 
-        adaptadorTestes.setCursor(null);
-
-        LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_TESTES, null, this);*/
 
     } public void inserirDoente (View view){
 
@@ -80,7 +73,7 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
         return  new CursorLoader(this, ContentProvider.ENDERECO_DOENTES, BdTabelaDoentes.TODOS_CAMPOS_DOENTE, null, null, BdTabelaDoentes.NOME_DOENTE);
-     // return new CursorLoader(this,ContentProvider.ENDERECO_TESTES,BdTabelaTestes.TODOS_CAMPOS_TESTES,null,null, BdTabelaTestes.NOME_DOENTE_TESTE);
+
     }
 
     /**
@@ -127,7 +120,6 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
     @Override
     public void onLoadFinished(@NonNull Loader<Cursor> loader, Cursor data) {
         adaptadorDoentes.setCursor(data);
-       // adaptadorTestes.setCursor(data);
     }
 
     /**
@@ -142,7 +134,6 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
         adaptadorDoentes.setCursor(null);
-       // adaptadorTestes.setCursor(null);
     }
 
 }

@@ -111,7 +111,6 @@ public class DisplayInserirDoentes<adapter> extends AppCompatActivity implements
         EditText textInputEditTextNome = (EditText) findViewById(R.id.textInputEditTextNome);
         EditText textInputEditTextTelemovel = (EditText) findViewById(R.id.textInputEditTextLayoutTelemovel);
 
-
         String Telemovel = textInputEditTextTelemovel.getText().toString();
         String nome = textInputEditTextNome.getText().toString();
 
@@ -139,6 +138,18 @@ public class DisplayInserirDoentes<adapter> extends AppCompatActivity implements
                 String dateEstadoAtual = dayOfMonth + "/" + month + "/" + year;
             }
         });
+        long idConcelho = spinnerConcelhos.getSelectedItemId();
+        /*
+        Doentes doentes = new Doentes();
+        doentes.setNome_doente(nome);
+        doentes.setNascimento_doente("06/07/2020");
+        doentes.setTelemovel_doente(Telemovel);
+        doentes.setId_concelho(idConcelho);
+        doentes.setSexo_doente();
+        doentes.setCronico_doente();
+        doentes.setEstado_doente();
+        doentes.setData_estado();*/
+
     }
     @Override
     protected void onResume() {
@@ -219,4 +230,5 @@ public class DisplayInserirDoentes<adapter> extends AppCompatActivity implements
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
         mostrarDadosSpinnerConcelhos(null);
     }
+
 }

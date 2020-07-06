@@ -19,6 +19,8 @@ import android.widget.CursorAdapter;
 import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -66,14 +68,19 @@ public class DisplayInserirTestes extends AppCompatActivity implements LoaderMan
     }
     public void registaTeste (View view){
 
-        EditText textInputEditTextNome = (EditText) findViewById(R.id.textInputEditTextNome);
-        String nome = textInputEditTextNome.getText().toString();
-
-        if (nome.length() == 0){
-            textInputEditTextNome.setError(getString(R.string.NomeObrigatorio));
-            textInputEditTextNome.requestFocus();
-            return;
+        long idNome = spinnerNomeDoente.getSelectedItemId();
+        String resultadoTeste = (String) spinnerNomeDoente.getSelectedItem();
+        Testes testes = new Testes();
+        testes.setIdDoente(idNome);
+        testes.setResultado_testes(resultadoTeste);
+        testes.setData_testes("06/07/2020");
+        try{
+            this.getContentResolver().insert(ContentProvider.ENDERECO_TESTES, Converte.testesToContentValues(testes));
+            Toast.makeText(this,"Teste inserido com sucesso",Toast.LENGTH_SHORT).show();
+        }catch (Exception e){
+            Toast.makeText(this,"Não inseriu ", Toast.LENGTH_SHORT).show();
         }
+
         //https://www.youtube.com/watch?v=j_-dmsRWL3g&fbclid=IwAR1jo1CXntOg7lLi6Il8j4oXwdGhsuA0LsYGOX92UWWs6zcGV_cYH_BQNyg
         CalendarView calendarViewDataTeste = (CalendarView) findViewById(R.id.calendarViewDataTeste);
 
