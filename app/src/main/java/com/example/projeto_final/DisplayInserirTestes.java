@@ -46,17 +46,7 @@ public class DisplayInserirTestes extends AppCompatActivity implements LoaderMan
 
     ArrayAdapter<String> adapterResultadoTest = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, resultadoTesteList);
         dropdownResultadoTeste.setAdapter(adapterResultadoTest);
-        dropdownResultadoTeste.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-        @Override
-        public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 
-        }
-
-        @Override
-        public void onNothingSelected(AdapterView<?> parent) {
-
-        }
-    });
         spinnerNomeDoente = (Spinner) findViewById(R.id.spinnerNomeDoente);
         mostrarDadosSpinnerNomeDoente(null);
         LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_NOME_DOENTE,null,this);
@@ -67,12 +57,13 @@ public class DisplayInserirTestes extends AppCompatActivity implements LoaderMan
         spinnerNomeDoente.setAdapter(adapter);
     }
     public void registaTeste (View view){
+        String resultado_teste = ((Spinner) findViewById(R.id.spinnerResultadoTeste)).getSelectedItem().toString();
 
         long idNome = spinnerNomeDoente.getSelectedItemId();
 
         Testes testes = new Testes();
         testes.setIdDoente(idNome);
-        testes.setResultado_testes("spinner");
+        testes.setResultado_testes(resultado_teste);
         testes.setData_testes("06/07/2020");
         try{
             this.getContentResolver().insert(ContentProvider.ENDERECO_TESTES, Converte.testesToContentValues(testes));

@@ -112,46 +112,52 @@ public class InserirDoente<adapter> extends AppCompatActivity implements LoaderM
         String Telemovel = textInputEditTextTelemovel.getText().toString();
         String nome = textInputEditTextNome.getText().toString();
 
+        String genero = ((Spinner) findViewById(R.id.spinnerGenero)).getSelectedItem().toString();
+        String cronicoDoente = ((Spinner) findViewById(R.id.spinnerDoenteCronico)).getSelectedItem().toString();
+        String estadoDoente = ((Spinner) findViewById(R.id.spinnerEstadoAtual)).getSelectedItem().toString();
+
+
         if (nome.length() == 0) {
             textInputEditTextNome.setError(getString(R.string.NomeObrigatorio));
             textInputEditTextNome.requestFocus();
             return;
         }
-        if ((Telemovel.length() != 9)) {
+        else if ((Telemovel.length() != 9)) {
             textInputEditTextTelemovel.setError(getString(R.string.CaracteresTelemovelObrigatorio));
             textInputEditTextTelemovel.requestFocus();
-        }
-        CalendarView calendarViewDataAniversario = (CalendarView) findViewById(R.id.calendarViewDataAniversario);
+        }else {
+            CalendarView calendarViewDataAniversario = (CalendarView) findViewById(R.id.calendarViewDataAniversario);
 
-        calendarViewDataAniversario.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String dateAniversario = dayOfMonth + "/" + month + "/" + year;
-            }
-        });
-        CalendarView calendarViewDateEstadoAtual = (CalendarView) findViewById(R.id.calendarViewDataEstadoAtual);
-        calendarViewDateEstadoAtual.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-            @Override
-            public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                String dateEstadoAtual = dayOfMonth + "/" + month + "/" + year;
-            }
-        });
-        long idConcelho = spinnerConcelhos.getSelectedItemId();
+            calendarViewDataAniversario.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+                @Override
+                public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                    String dateAniversario = dayOfMonth + "/" + month + "/" + year;
+                }
+            });
+            CalendarView calendarViewDateEstadoAtual = (CalendarView) findViewById(R.id.calendarViewDataEstadoAtual);
+            calendarViewDateEstadoAtual.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
+                @Override
+                public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
+                    String dateEstadoAtual = dayOfMonth + "/" + month + "/" + year;
+                }
+            });
+            long idConcelho = spinnerConcelhos.getSelectedItemId();
 
-        Doentes doentes = new Doentes();
-        doentes.setNome_doente(nome);
-        doentes.setNascimento_doente("06/07/2020");
-        doentes.setTelemovel_doente(Telemovel);
-        doentes.setId_concelho(idConcelho);
-        doentes.setSexo_doente("spinner");
-        doentes.setCronico_doente("spinner");
-        doentes.setEstado_doente("spinner");
-        doentes.setData_estado("spinner");
-        try{
-            this.getContentResolver().insert(ContentProvider.ENDERECO_DOENTES, Converte.doenteToContentValues(doentes));
-            Toast.makeText(this,"Doente inserido com sucesso",Toast.LENGTH_SHORT).show();
-        }catch (Exception e){
-            Toast.makeText(this,"Doente Não inserido ", Toast.LENGTH_SHORT).show();
+            Doentes doentes = new Doentes();
+            doentes.setNome_doente(nome);
+            doentes.setNascimento_doente("data");
+            doentes.setTelemovel_doente(Telemovel);
+            doentes.setId_concelho(idConcelho);
+            doentes.setSexo_doente(genero);
+            doentes.setCronico_doente(cronicoDoente);
+            doentes.setEstado_doente(estadoDoente);
+            doentes.setData_estado("data");
+            try {
+                this.getContentResolver().insert(ContentProvider.ENDERECO_DOENTES, Converte.doenteToContentValues(doentes));
+                Toast.makeText(this, "Doente inserido com sucesso", Toast.LENGTH_SHORT).show();
+            } catch (Exception e) {
+                Toast.makeText(this, "Doente Não inserido ", Toast.LENGTH_SHORT).show();
+            }
         }
 
     }
