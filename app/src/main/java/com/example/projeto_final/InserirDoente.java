@@ -24,6 +24,7 @@ import android.widget.Spinner;
 import java.util.ArrayList;
 import java.util.List;
 import android.os.Bundle;
+import android.widget.Toast;
 
 public class InserirDoente<adapter> extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     private Spinner spinnerConcelhos;
@@ -136,16 +137,22 @@ public class InserirDoente<adapter> extends AppCompatActivity implements LoaderM
             }
         });
         long idConcelho = spinnerConcelhos.getSelectedItemId();
-        /*
+
         Doentes doentes = new Doentes();
         doentes.setNome_doente(nome);
         doentes.setNascimento_doente("06/07/2020");
         doentes.setTelemovel_doente(Telemovel);
         doentes.setId_concelho(idConcelho);
-        doentes.setSexo_doente();
-        doentes.setCronico_doente();
-        doentes.setEstado_doente();
-        doentes.setData_estado();*/
+        doentes.setSexo_doente("spinner");
+        doentes.setCronico_doente("spinner");
+        doentes.setEstado_doente("spinner");
+        doentes.setData_estado("spinner");
+        try{
+            this.getContentResolver().insert(ContentProvider.ENDERECO_DOENTES, Converte.doenteToContentValues(doentes));
+            Toast.makeText(this,"Doente inserido com sucesso",Toast.LENGTH_SHORT).show();
+        }catch (Exception e){
+            Toast.makeText(this,"Doente Não inserido ", Toast.LENGTH_SHORT).show();
+        }
 
     }
     @Override

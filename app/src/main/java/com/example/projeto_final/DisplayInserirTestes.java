@@ -72,13 +72,13 @@ public class DisplayInserirTestes extends AppCompatActivity implements LoaderMan
 
         Testes testes = new Testes();
         testes.setIdDoente(idNome);
-        testes.setResultado_testes("Recuperado");
+        testes.setResultado_testes("spinner");
         testes.setData_testes("06/07/2020");
         try{
             this.getContentResolver().insert(ContentProvider.ENDERECO_TESTES, Converte.testesToContentValues(testes));
             Toast.makeText(this,"Teste inserido com sucesso",Toast.LENGTH_SHORT).show();
         }catch (Exception e){
-            Toast.makeText(this,"Não inseriu ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Teste não inserido ", Toast.LENGTH_SHORT).show();
         }
 
         //https://www.youtube.com/watch?v=j_-dmsRWL3g&fbclid=IwAR1jo1CXntOg7lLi6Il8j4oXwdGhsuA0LsYGOX92UWWs6zcGV_cYH_BQNyg
