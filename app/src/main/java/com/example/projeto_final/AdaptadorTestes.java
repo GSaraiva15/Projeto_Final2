@@ -12,7 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class AdaptadorTestes extends RecyclerView.Adapter<AdaptadorTestes.ViewHolderTestes>  {
-    private final Context context ;
+    private final Context context;
     private Cursor cursor = null;
 
     public void setCursor(Cursor cursor) {
@@ -93,7 +93,7 @@ public class AdaptadorTestes extends RecyclerView.Adapter<AdaptadorTestes.ViewHo
             }
             viewHolderTestesSelecionado = this;
             seleciona();
-            DisplayMostrarTestes displayMostrarTestes = (DisplayMostrarTestes) AdaptadorTestes.this.context;
+            MostrarTestes displayMostrarTestes = (MostrarTestes) AdaptadorTestes.this.context;
 
         }
         private void desSeleciona() {

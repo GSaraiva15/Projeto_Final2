@@ -9,8 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DisplayInserirTestes"></activity>
-        <activity android:name=".DisplayMostrarDoentes" />
+        <activity android:name=".InserirDoente"></activity>
+        <activity android:name=".MostrarDoente" />
+        <activity android:name=".MostrarTestes" />
+        <activity android:name=".DisplayInserirTestes" />
         <activity android:name=".DisplayVerEstatisticas" />
         <activity android:name=".DisplayInserirDoentes" />
         <activity android:name=".MainActivity">
@@ -20,10 +22,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    <provider
-    android:name="ContentProvider"
-    android:authorities="com.example.projeto_final"
-    android:exported="false" />
+
+        <provider
+            android:name=".ContentProvider"
+            android:authorities="com.example.projeto_final"
+            android:exported="false" />
     </application>
 
 </manifest>

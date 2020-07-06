@@ -21,25 +21,22 @@ import android.widget.EditText;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 
-import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
-import java.text.SimpleDateFormat;
 import java.util.List;
+import android.os.Bundle;
 
-public class DisplayInserirDoentes<adapter> extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+public class InserirDoente<adapter> extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     private Spinner spinnerConcelhos;
     public static final  int ID_CURSOR_LOADER_CONCELHOS = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_doentes);
+        setContentView(R.layout.activity_inserir_doente);
         Intent intentInserirDoente = getIntent();
 
         Spinner dropdownGenero;
-        dropdownGenero = (Spinner) findViewById(R.id.spinnerResultadoTeste);
+        dropdownGenero = (Spinner) findViewById(R.id.spinnerGenero);
         final List<String> generoList = new ArrayList<>();
         generoList.add(getString(R.string.masculino));
         generoList.add(getString(R.string.feminino));

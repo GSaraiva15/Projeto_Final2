@@ -46,35 +46,33 @@
         android:id="@+id/buttonVerEstatisticas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="12dp"
         android:layout_marginRight="12dp"
         android:onClick="verEstatisticas"
         android:text="@string/Button_estatisticas"
-        app:layout_constraintBaseline_toBaselineOf="@+id/buttonTestes"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageViewDistrito" />
 
     <ImageView
         android:id="@+id/imageViewDistrito"
         android:layout_width="382dp"
         android:layout_height="264dp"
         android:layout_marginTop="24dp"
-        app:layout_constraintBottom_toTopOf="@+id/buttonRegistarTeste"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.482"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageViewCovid"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/distrito_guarda" />
 
     <Button
-        android:id="@+id/buttonTestes"
+        android:id="@+id/buttonMostarTestes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="24dp"
         android:onClick="mostrarTestes"
         android:text="@string/teste"
         app:layout_constraintEnd_toStartOf="@+id/buttonVerEstatisticas"
-        app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toEndOf="@+id/buttonRegistarTeste"
         app:layout_constraintTop_toBottomOf="@+id/imageViewDistrito" />
 

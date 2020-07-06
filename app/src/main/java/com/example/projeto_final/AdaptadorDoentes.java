@@ -108,7 +108,7 @@ public class AdaptadorDoentes extends RecyclerView.Adapter<AdaptadorDoentes.View
             }
             viewHolderDoenteSelecionado = this;
             seleciona();
-            DisplayMostrarDoentes displayMostrarDoentes = (DisplayMostrarDoentes) AdaptadorDoentes.this.context;
+            MostrarDoente MostrarDoentes = (MostrarDoente) AdaptadorDoentes.this.context;
 
         }
         private void desSeleciona() {

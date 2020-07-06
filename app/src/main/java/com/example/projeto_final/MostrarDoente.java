@@ -1,23 +1,33 @@
 package com.example.projeto_final;
-
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Context;
-import androidx.loader.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.CalendarView;
 import android.widget.CursorAdapter;
+import android.widget.EditText;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
 
-public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
+import java.util.ArrayList;
+import java.util.List;
 
+import android.os.Bundle;
+
+public class MostrarDoente extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
     public static final String ID_DOENTE = "ID_DOENTE";
     public static final int ID_CURSOR_LOADER_DOENTE = 0;
     private AdaptadorDoentes adaptadorDoentes;
@@ -26,12 +36,10 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
 
     private Doentes doentes = null;
 
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_mostrar_doentes);
+        setContentView(R.layout.activity_mostrar_doente);
         Intent intentMostrarDadosDoente = getIntent();
 
         recyclerViewDoentes = (RecyclerView) findViewById(R.id.RecylerViewDoentes);
@@ -47,7 +55,7 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
 
     } public void inserirDoente (View view){
 
-        Intent intentInserirDoente = new Intent(this,DisplayInserirDoentes.class);
+        Intent intentInserirDoente = new Intent(this,InserirDoente.class);
         startActivity(intentInserirDoente);
     }
 
@@ -68,7 +76,7 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
     @NonNull
     @Override
     public Loader<Cursor> onCreateLoader(int id, @Nullable Bundle args) {
-        return  new CursorLoader(this, ContentProvider.ENDERECO_DOENTES, BdTabelaDoentes.TODOS_CAMPOS_DOENTE, null, null, BdTabelaDoentes.NOME_DOENTE);
+        return  new androidx.loader.content.CursorLoader(this, ContentProvider.ENDERECO_DOENTES, BdTabelaDoentes.TODOS_CAMPOS_DOENTE, null, null, BdTabelaDoentes.NOME_DOENTE);
 
     }
 
@@ -132,4 +140,4 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
         adaptadorDoentes.setCursor(null);
     }
 
-}
+    }

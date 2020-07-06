@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +16,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void mostrarDoente(View view){
 
-        Intent intentMostrarDadosDoente = new Intent(this, DisplayMostrarDoentes.class);
+        Intent intentMostrarDadosDoente = new Intent(this, MostrarDoente.class);
         startActivity(intentMostrarDadosDoente);
     }
     public void verEstatisticas (View view){
@@ -24,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intentEstatistica);
     }
     public void mostrarTestes(View view){
-
-        Intent intentMostrarTestes = new Intent(this, DisplayMostrarTestes.class);
+        Intent intentMostrarTestes = new Intent(this, MostrarTestes.class);
         startActivity(intentMostrarTestes);
     }
 

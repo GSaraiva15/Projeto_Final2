@@ -6,17 +6,31 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.Loader;
+import androidx.loader.content.CursorLoader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
 import android.content.Context;
-import androidx.loader.content.CursorLoader;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.CalendarView;
 import android.widget.CursorAdapter;
+import android.widget.EditText;
+import android.widget.SimpleCursorAdapter;
+import android.widget.Spinner;
+import android.widget.Toast;
 
-public class DisplayMostrarTestes extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
+
+public class MostrarTestes extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
     public static final String ID_TESTES = "ID_TESTES";
     public static final int ID_CURSOR_LOADER_TESTES = 0;
     private AdaptadorTestes adaptadorTestes;
@@ -26,9 +40,7 @@ public class DisplayMostrarTestes extends AppCompatActivity implements LoaderMan
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activiy_mostrar_testes);
-       Intent intentMostrarTestes = getIntent();
-
+        setContentView(R.layout.activity_mostrar_testes);
         recyclerViewTestes = (RecyclerView) findViewById(R.id.RecyclerViewTestes);
         adaptadorTestes = new AdaptadorTestes(this);
         recyclerViewTestes.setAdapter(adaptadorTestes);
@@ -37,7 +49,6 @@ public class DisplayMostrarTestes extends AppCompatActivity implements LoaderMan
         adaptadorTestes.setCursor(null);
 
         LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_TESTES, null, this);
-
     }
     public void inserirTestes (View view){
 
@@ -121,7 +132,7 @@ public class DisplayMostrarTestes extends AppCompatActivity implements LoaderMan
      */
     @Override
     public void onLoaderReset(@NonNull Loader<Cursor> loader) {
-    adaptadorTestes.setCursor(null);
+        adaptadorTestes.setCursor(null);
     }
 
 }

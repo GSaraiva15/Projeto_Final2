@@ -87,7 +87,8 @@ public class Converte {
         Concelhos concelhos = new Concelhos();
         concelhos.setId(cursor.getLong(cursor.getColumnIndex(BdTabelaConcelhos._ID)));
         concelhos.setNr_infetados(cursor.getInt(cursor.getColumnIndex(BdTabelaConcelhos.NR_INFETADOS_CONCELHO)));
-        concelhos.setNr_recuperados(cursor.getInt(cursor.getColumnIndex(BdTabelaConcelhos.NR_OBITOS_CONCELHO)));
+        concelhos.setNr_recuperados(cursor.getInt(cursor.getColumnIndex(BdTabelaConcelhos.NR_RECUPERADOS_CONCELHO)));
+        concelhos.setNr_obitos(cursor.getInt(cursor.getColumnIndex(BdTabelaConcelhos.NR_OBITOS_CONCELHO)));
         concelhos.setNr_Habitante(cursor.getInt(cursor.getColumnIndex(BdTabelaConcelhos.NR_HABITANTES_CONCELHO)));
         return concelhos;
     }
