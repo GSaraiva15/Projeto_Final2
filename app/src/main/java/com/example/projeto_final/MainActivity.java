@@ -13,20 +13,20 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
-    public void inserirDados (View view){
+    public void mostrarDoente(View view){
 
-        Intent intentInserirDados = new Intent(this, DisplayMostrarDoentes.class);
-        startActivity(intentInserirDados);
+        Intent intentMostrarDadosDoente = new Intent(this, DisplayMostrarDoentes.class);
+        startActivity(intentMostrarDadosDoente);
     }
     public void verEstatisticas (View view){
 
         Intent intentEstatistica = new Intent(this,DisplayVerEstatisticas.class);
         startActivity(intentEstatistica);
     }
-    public void inserirTestes (View view){
+    public void mostrarTestes(View view){
 
-        Intent intentInserirTestes = new Intent(this, DisplayMostrarDoentes.class);
-        startActivity(intentInserirTestes);
+        Intent intentMostrarTestes = new Intent(this, DisplayMostrarTestes.class);
+        startActivity(intentMostrarTestes);
     }
 
 }

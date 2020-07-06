@@ -26,7 +26,8 @@ public class DisplayMostrarTestes extends AppCompatActivity implements LoaderMan
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activiy_main_mostrar_testes);
+        setContentView(R.layout.activiy_mostrar_testes);
+       Intent intentMostrarTestes = getIntent();
 
         recyclerViewTestes = (RecyclerView) findViewById(R.id.RecyclerViewTestes);
         adaptadorTestes = new AdaptadorTestes(this);
@@ -37,6 +38,11 @@ public class DisplayMostrarTestes extends AppCompatActivity implements LoaderMan
 
         LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_TESTES, null, this);
 
+    }
+    public void inserirTestes (View view){
+
+        Intent intentInserirTestes = new Intent(this,DisplayInserirTestes.class);
+        startActivity(intentInserirTestes);
     }
     @Override
     protected void onResume(){

@@ -32,6 +32,7 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_mostrar_doentes);
+        Intent intentMostrarDadosDoente = getIntent();
 
         recyclerViewDoentes = (RecyclerView) findViewById(R.id.RecylerViewDoentes);
         adaptadorDoentes = new AdaptadorDoentes(this);
@@ -48,11 +49,6 @@ public class DisplayMostrarDoentes extends AppCompatActivity implements LoaderMa
 
         Intent intentInserirDoente = new Intent(this,DisplayInserirDoentes.class);
         startActivity(intentInserirDoente);
-    }
-    public void inserirTestes (View view){
-
-        Intent intentInserirTestes = new Intent(this,DisplayInserirTestes.class);
-        startActivity(intentInserirTestes);
     }
 
     @Override

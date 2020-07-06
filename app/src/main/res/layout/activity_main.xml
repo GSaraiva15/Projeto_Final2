@@ -37,8 +37,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginLeft="16dp"
-        android:onClick="inserirDados"
-        android:text="Pacientes"
+        android:onClick="mostrarDoente"
+        android:text="@string/paciente"
         app:layout_constraintBaseline_toBaselineOf="@+id/buttonVerEstatisticas"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -71,8 +71,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:onClick="inserirTestes"
-        android:text="Testes"
+        android:onClick="mostrarTestes"
+        android:text="@string/teste"
         app:layout_constraintEnd_toStartOf="@+id/buttonVerEstatisticas"
         app:layout_constraintHorizontal_bias="0.463"
         app:layout_constraintStart_toEndOf="@+id/buttonRegistarTeste"
