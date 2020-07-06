@@ -69,10 +69,10 @@ public class DisplayInserirTestes extends AppCompatActivity implements LoaderMan
     public void registaTeste (View view){
 
         long idNome = spinnerNomeDoente.getSelectedItemId();
-        String resultadoTeste = (String) spinnerNomeDoente.getSelectedItem();
+
         Testes testes = new Testes();
         testes.setIdDoente(idNome);
-        testes.setResultado_testes(resultadoTeste);
+        testes.setResultado_testes("Recuperado");
         testes.setData_testes("06/07/2020");
         try{
             this.getContentResolver().insert(ContentProvider.ENDERECO_TESTES, Converte.testesToContentValues(testes));

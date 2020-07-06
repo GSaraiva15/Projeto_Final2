@@ -26,7 +26,7 @@ public class DisplayMostrarTestes extends AppCompatActivity implements LoaderMan
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_display_inserir_testes);
+        setContentView(R.layout.activiy_main_mostrar_testes);
 
         recyclerViewTestes = (RecyclerView) findViewById(R.id.RecyclerViewTestes);
         adaptadorTestes = new AdaptadorTestes(this);

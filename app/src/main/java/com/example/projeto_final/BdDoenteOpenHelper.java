@@ -74,6 +74,26 @@ public class BdDoenteOpenHelper extends SQLiteOpenHelper {
         doentes.setData_estado("25/06/2020");
 
         tabelaDoentes.insert(Converte.doenteToContentValues(doentes));
+
+
+        concelhos.setNome_concelho("Santiago");
+        concelhos.setNr_infetados(1);
+        concelhos.setNr_recuperados(1);
+        concelhos.setNr_obitos(0);
+        concelhos.setNr_Habitante(123456879);
+        long idSantiago = tabelaConcelhos.insert(Converte.concelhosToContentValues(concelhos));
+
+
+        doentes.setNome_doente("Valter");
+        doentes.setNascimento_doente("15/02/2000");
+        doentes.setTelemovel_doente("987654321");
+        doentes.setId_concelho(idSantiago);
+        doentes.setSexo_doente("Masculino");
+        doentes.setCronico_doente("Não");
+        doentes.setEstado_doente("Recuperado");
+        doentes.setData_estado("25/06/2020");
+
+        tabelaDoentes.insert(Converte.doenteToContentValues(doentes));
     }
     private void inserirConcelho(BdTabelaConcelhos tabelaConcelhos) {
         Concelhos concelhos = new Concelhos();
