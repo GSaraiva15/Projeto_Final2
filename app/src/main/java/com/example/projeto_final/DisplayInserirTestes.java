@@ -57,21 +57,6 @@ public class DisplayInserirTestes extends AppCompatActivity implements LoaderMan
         spinnerNomeDoente.setAdapter(adapter);
     }
     public void registaTeste (View view){
-        String resultado_teste = ((Spinner) findViewById(R.id.spinnerResultadoTeste)).getSelectedItem().toString();
-
-        long idNome = spinnerNomeDoente.getSelectedItemId();
-
-        Testes testes = new Testes();
-        testes.setIdDoente(idNome);
-        testes.setResultado_testes(resultado_teste);
-        testes.setData_testes("06/07/2020");
-        try{
-            this.getContentResolver().insert(ContentProvider.ENDERECO_TESTES, Converte.testesToContentValues(testes));
-            Toast.makeText(this,"Teste inserido com sucesso",Toast.LENGTH_SHORT).show();
-        }catch (Exception e){
-            Toast.makeText(this,"Teste não inserido ", Toast.LENGTH_SHORT).show();
-        }
-
         //https://www.youtube.com/watch?v=j_-dmsRWL3g&fbclid=IwAR1jo1CXntOg7lLi6Il8j4oXwdGhsuA0LsYGOX92UWWs6zcGV_cYH_BQNyg
         CalendarView calendarViewDataTeste = (CalendarView) findViewById(R.id.calendarViewDataTeste);
 
@@ -81,6 +66,20 @@ public class DisplayInserirTestes extends AppCompatActivity implements LoaderMan
                 String dateTeste = dayOfMonth + "/" + month + "/" + year;
             }
         });
+        String resultado_teste = ((Spinner) findViewById(R.id.spinnerResultadoTeste)).getSelectedItem().toString();
+        String dataTestes = new Date(calendarViewDataTeste.getDate()).toString();
+        long idNome = spinnerNomeDoente.getSelectedItemId();
+
+        Testes testes = new Testes();
+        testes.setIdDoente(idNome);
+        testes.setResultado_testes(resultado_teste);
+        testes.setData_testes(dataTestes);
+        try{
+            this.getContentResolver().insert(ContentProvider.ENDERECO_TESTES, Converte.testesToContentValues(testes));
+            Toast.makeText(this, R.string.teste_inserido_com_sucesso,Toast.LENGTH_SHORT).show();
+        }catch (Exception e){
+            Toast.makeText(this, R.string.teste_nao_inserido, Toast.LENGTH_SHORT).show();
+        }
 
     }
     @Override

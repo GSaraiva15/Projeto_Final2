@@ -40,6 +40,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="28dp"
         android:layout_marginRight="28dp"
+        android:onClick="inserirDoente"
         android:text="@string/buttun_apagar_teste"
         app:layout_constraintEnd_toStartOf="@+id/buttonAlterarTeste"
         app:layout_constraintStart_toStartOf="parent"

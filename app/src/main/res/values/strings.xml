@@ -1,5 +1,4 @@
 <resources>
-    <string name="app_name" translatable="false">Projeto_Final</string>
     <string name="titulo">"Guarda covid-19 stats "</string>
     <string name="Button_estatisticas">Stats</string>
     <string name="Button_inserir">Insert data</string>
@@ -50,4 +49,9 @@
     <string name="buttun_delete_Patient">Delete Patient</string>
     <string name="button_alterar_Teste">Update Test</string>
     <string name="buttun_apagar_teste">Delete Test</string>
+    <string name="app_name">Covid 19 in Guarda</string>
+    <string name="inserido_com_sucesso">Patient insert with sucess</string>
+    <string name="nao_inserido">Patient not insert</string>
+    <string name="teste_inserido_com_sucesso">Test insert with sucess</string>
+    <string name="teste_nao_inserido">Test not insert</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Projeto_Final</string>
+    <string name="app_name">Covid 19 na Guarda</string>
     <string name="titulo">Estatísticas covid-19 na Guarda</string>
     <string name="Button_inserir">Inserir dados</string>
     <string name="Button_estatisticas">Estatísticas</string>
@@ -37,4 +37,8 @@
     <string name="buttun_apagar_teste">Apagar Teste</string>
     <string name="button_alterar_Teste">Alterar Teste</string>
     <string name="CaracteresTelemovelObrigatorio">nr tem de ter 9 caracteres</string>
+    <string name="inserido_com_sucesso">Doente inserido com sucesso</string>
+    <string name="nao_inserido">Doente não inserido</string>
+    <string name="teste_inserido_com_sucesso">Teste inserido com sucesso</string>
+    <string name="teste_nao_inserido">Teste não inserido</string>
 </resources>

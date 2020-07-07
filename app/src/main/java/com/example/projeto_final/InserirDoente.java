@@ -22,6 +22,7 @@ import android.widget.SimpleCursorAdapter;
 import android.widget.Spinner;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import android.os.Bundle;
 import android.widget.Toast;
@@ -67,17 +68,6 @@ public class InserirDoente<adapter> extends AppCompatActivity implements LoaderM
         cronicoList.add(getString(R.string.nao));
         ArrayAdapter<String> adapterCronico = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, cronicoList);
         dropdownDoenteCronico.setAdapter(adapterCronico);
-        dropdownDoenteCronico.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
         Spinner dropdownEstadoAtual;
         dropdownEstadoAtual = (Spinner) findViewById(R.id.spinnerEstadoAtual);
@@ -87,17 +77,6 @@ public class InserirDoente<adapter> extends AppCompatActivity implements LoaderM
         estadoAtualList.add(getString(R.string.falecido));
         ArrayAdapter<String> adapterEstadoAtual = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, estadoAtualList);
         dropdownEstadoAtual.setAdapter(adapterEstadoAtual);
-        dropdownEstadoAtual.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
 
     }
     private void mostrarDadosSpinnerConcelhos(Cursor data){
@@ -116,7 +95,6 @@ public class InserirDoente<adapter> extends AppCompatActivity implements LoaderM
         String cronicoDoente = ((Spinner) findViewById(R.id.spinnerDoenteCronico)).getSelectedItem().toString();
         String estadoDoente = ((Spinner) findViewById(R.id.spinnerEstadoAtual)).getSelectedItem().toString();
 
-
         if (nome.length() == 0) {
             textInputEditTextNome.setError(getString(R.string.NomeObrigatorio));
             textInputEditTextNome.requestFocus();
@@ -128,35 +106,26 @@ public class InserirDoente<adapter> extends AppCompatActivity implements LoaderM
         }else {
             CalendarView calendarViewDataAniversario = (CalendarView) findViewById(R.id.calendarViewDataAniversario);
 
-            calendarViewDataAniversario.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-                @Override
-                public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                    String dateAniversario = dayOfMonth + "/" + month + "/" + year;
-                }
-            });
-            CalendarView calendarViewDateEstadoAtual = (CalendarView) findViewById(R.id.calendarViewDataEstadoAtual);
-            calendarViewDateEstadoAtual.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
-                @Override
-                public void onSelectedDayChange(@NonNull CalendarView view, int year, int month, int dayOfMonth) {
-                    String dateEstadoAtual = dayOfMonth + "/" + month + "/" + year;
-                }
-            });
-            long idConcelho = spinnerConcelhos.getSelectedItemId();
 
+            CalendarView calendarViewDateEstadoAtual = (CalendarView) findViewById(R.id.calendarViewDataEstadoAtual);
+
+            long idConcelho = spinnerConcelhos.getSelectedItemId();
+            String dataAniversaio = new Date(calendarViewDataAniversario.getDate()).toString();
+            String dataEstado = new Date(calendarViewDateEstadoAtual.getDate()).toString();
             Doentes doentes = new Doentes();
             doentes.setNome_doente(nome);
-            doentes.setNascimento_doente("data");
+            doentes.setNascimento_doente(dataAniversaio);
             doentes.setTelemovel_doente(Telemovel);
             doentes.setId_concelho(idConcelho);
             doentes.setSexo_doente(genero);
             doentes.setCronico_doente(cronicoDoente);
             doentes.setEstado_doente(estadoDoente);
-            doentes.setData_estado("data");
+            doentes.setData_estado(dataEstado);
             try {
                 this.getContentResolver().insert(ContentProvider.ENDERECO_DOENTES, Converte.doenteToContentValues(doentes));
-                Toast.makeText(this, "Doente inserido com sucesso", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.inserido_com_sucesso, Toast.LENGTH_SHORT).show();
             } catch (Exception e) {
-                Toast.makeText(this, "Doente Não inserido ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.nao_inserido, Toast.LENGTH_SHORT).show();
             }
         }
 

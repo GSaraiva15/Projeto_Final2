@@ -5,7 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.provider.BaseColumns;
 
-public class BdTabelaConcelhos implements BaseColumns {
+public class    BdTabelaConcelhos implements BaseColumns {
     public static String NOME_TABELA = "Concelhos";
     public static String NOME_CONCELHO = "nome_concelho_";
     public static String NR_INFETADOS_CONCELHO = "nr_infetados";

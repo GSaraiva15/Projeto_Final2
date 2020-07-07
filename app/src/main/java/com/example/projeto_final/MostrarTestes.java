@@ -10,25 +10,17 @@ import androidx.loader.content.CursorLoader;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.CalendarView;
+import android.widget.Button;
 import android.widget.CursorAdapter;
-import android.widget.EditText;
-import android.widget.SimpleCursorAdapter;
-import android.widget.Spinner;
 import android.widget.Toast;
-
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
 
 public class MostrarTestes extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor>{
     public static final String ID_TESTES = "ID_TESTES";
@@ -36,7 +28,8 @@ public class MostrarTestes extends AppCompatActivity implements LoaderManager.Lo
     private AdaptadorTestes adaptadorTestes;
     private RecyclerView recyclerViewTestes;
     private Testes testes = null;
-
+    private Doentes doentes;
+    private Uri enderecoEliminarDoente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,6 +42,12 @@ public class MostrarTestes extends AppCompatActivity implements LoaderManager.Lo
         adaptadorTestes.setCursor(null);
 
         LoaderManager.getInstance(this).initLoader(ID_CURSOR_LOADER_TESTES, null, this);
+
+        /*public void eliminarTeste(View view){
+            eliminar();
+        }*/
+
+
     }
     public void inserirTestes (View view){
 
@@ -135,4 +134,41 @@ public class MostrarTestes extends AppCompatActivity implements LoaderManager.Lo
         adaptadorTestes.setCursor(null);
     }
 
+
+
+
+    /*public void eliminar() {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+
+        builder.setMessage("Are you sure you want to delete? '" + doentes.getNome_doente() + "'" );
+        builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                EliminarTeste();
+            }
+        });
+
+        builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                finish();
+            }
+        });
+
+        builder.show();
+
+    }
+    public void EliminarTeste() {
+        int PessoasTestes = getContentResolver().delete( enderecoEliminarDoente ,null, null);
+
+        if (PessoasTestes == 1) {
+            Toast.makeText(this, "Deleted with sucess", Toast.LENGTH_SHORT).show();
+            finish();
+        } else {
+            Toast.makeText(this, "Not Deleted", Toast.LENGTH_SHORT).show();
+        }
+
+    }*/
 }
